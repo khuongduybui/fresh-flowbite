@@ -1,25 +1,32 @@
-import { ComponentChildren } from "preact";
+import { ComponentChildren, JSX } from "preact";
 import { Head } from "$fresh/runtime.ts";
 
-export type PageProps = {
-  children: ComponentChildren;
+export type PageProps = JSX.HTMLAttributes<HTMLBodyElement> & {
   title?: string;
 };
 
-export default function Page({ children, title }: PageProps) {
+export default function Page(
+  { class: extraClass = "", title, ...props }: PageProps,
+) {
+  const commonClassNames = [
+    "bg-white",
+    "text-gray-900",
+    "dark:(bg-gray-900 text-white)",
+  ];
+  const classNames = commonClassNames.concat(extraClass);
+
+  const head = title
+    ? (
+      <Head>
+        <title>{title}</title>
+      </Head>
+    )
+    : null;
+
   return (
     <>
-      {title
-        ? (
-          <Head>
-            <title>{title}</title>
-          </Head>
-        )
-        : null}
-
-      <body class="bg-white text-gray-900 dark:(bg-gray-900 text-white)">
-        {children}
-      </body>
+      {head}
+      <body {...props} class={classNames.join(" ")} />
     </>
   );
 }

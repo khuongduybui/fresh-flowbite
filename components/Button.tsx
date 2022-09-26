@@ -1,4 +1,4 @@
-import { ComponentChildren, JSX } from "preact";
+import { JSX } from "preact";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 
 enum ButtonVariants {
@@ -11,14 +11,16 @@ enum ButtonVariants {
   yellow,
   purple,
 }
+
 export type ButtonProps = JSX.HTMLAttributes<HTMLButtonElement> & {
-  extraClass?: string;
   variant?: keyof typeof ButtonVariants;
 };
 
-export default function Button({ extraClass, variant, ...props }: ButtonProps) {
-  const classNames = [
-    extraClass ?? "",
+export default function Button(
+  { class: extraClass = "", disabled, variant = "default", ...props }:
+    ButtonProps,
+) {
+  const commonClassNames = [
     "focus:(ring-4 outline-none)",
     "font-medium",
     "rounded-lg",
@@ -90,16 +92,16 @@ export default function Button({ extraClass, variant, ...props }: ButtonProps) {
       "dark:(bg-purple-600 hover:bg-purple-700 focus:ring-purple-900)",
     ],
   };
-  const variantEnum = ButtonVariants[variant ?? "default"];
-  const finalClassNames = classNames.concat(
-    extraClassNamesByVariant[variantEnum],
+  const classNames = commonClassNames.concat(
+    extraClassNamesByVariant[ButtonVariants[variant]],
+    [extraClass],
   );
 
   return (
     <button
       {...props}
-      disabled={!IS_BROWSER || props.disabled}
-      class={finalClassNames.join(" ")}
+      disabled={!IS_BROWSER || disabled}
+      class={classNames.join(" ")}
     />
   );
 }
