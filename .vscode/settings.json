@@ -1,0 +1,10 @@
+{
+  "cSpell.customDictionaries": {
+    "custom-dictionary-folder-flowbite": {
+      "name": "custom-dictionary-folder-flowbite",
+      "path": "${workspaceFolder:flowbite}/.cspell/custom-dictionary-folder-flowbite.txt",
+      "addWords": true,
+      "scope": "folder"
+    }
+  }
+}
