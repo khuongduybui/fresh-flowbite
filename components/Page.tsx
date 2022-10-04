@@ -5,9 +5,7 @@ export type PageProps = JSX.HTMLAttributes<HTMLBodyElement> & {
   title?: string;
 };
 
-export default function Page(
-  { class: extraClass = "", title, ...props }: PageProps,
-) {
+export default function Page({ class: extraClass = "", title, ...props }: PageProps) {
   const commonClassNames = [
     "bg-white",
     "text-gray-900",

@@ -16,10 +16,7 @@ export type ButtonProps = JSX.HTMLAttributes<HTMLButtonElement> & {
   variant?: keyof typeof ButtonVariants;
 };
 
-export default function Button(
-  { class: extraClass = "", disabled, variant = "default", ...props }:
-    ButtonProps,
-) {
+export default function Button({ class: extraClass = "", disabled, variant = "default", ...props }: ButtonProps) {
   const commonClassNames = [
     "focus:(ring-4 outline-none)",
     "font-medium",
@@ -97,11 +94,5 @@ export default function Button(
     [extraClass],
   );
 
-  return (
-    <button
-      {...props}
-      disabled={!IS_BROWSER || disabled}
-      class={classNames.join(" ")}
-    />
-  );
+  return <button {...props} disabled={!IS_BROWSER || disabled} class={classNames.join(" ")} />;
 }
