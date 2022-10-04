@@ -12,6 +12,14 @@ runtimes:
     - go@1.18.3
     - node@16.14.2
 lint:
+  ignore:
+    - linters:
+        - prettier
+      paths:
+        - "**/*.ts"
+        - "**/*.tsx"
+        - "**/*.md"
+        - "**/*.json"
   definitions:
     - name: deno-ts
       files:
@@ -44,6 +52,7 @@ lint:
           success_codes:
             - 0
   enabled:
+    - prettier@2.7.1
     - cspell@6.12.0
     - deno-ts
     - deno-md
