@@ -1,0 +1,16 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions:
+  [
+    {
+      "name": "cSpell-fresh",
+      "path": "../75bfe4b6405d708f5b2ec670d7d1b71f/dictionary.txt",
+      "addWords": true,
+      "scope": "folder",
+    },
+  ]
+dictionaries:
+  - cSpell-fresh
+words: []
+ignoreWords: []
+import: []
