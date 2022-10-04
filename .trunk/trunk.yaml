@@ -12,12 +12,45 @@ runtimes:
     - go@1.18.3
     - node@16.14.2
 lint:
+  definitions:
+    - name: deno-ts
+      files:
+        - typescript
+      commands:
+        - run: deno fmt -
+          output: rewrite
+          stdin: true
+          formatter: true
+          success_codes:
+            - 0
+    - name: deno-md
+      files:
+        - markdown
+      commands:
+        - run: deno fmt --ext=md -
+          output: rewrite
+          stdin: true
+          formatter: true
+          success_codes:
+            - 0
+    - name: deno-json
+      files:
+        - json
+      commands:
+        - run: deno fmt --ext=json -
+          output: rewrite
+          stdin: true
+          formatter: true
+          success_codes:
+            - 0
   enabled:
     - cspell@6.12.0
+    - deno-ts
+    - deno-md
+    - deno-json
     - git-diff-check
     - gitleaks@8.13.0
     - markdownlint@0.32.2
-    - prettier@2.7.1
 cli:
   version: 0.18.1-beta
 plugins:
