@@ -6,17 +6,17 @@ export type FlowbitePluginOptions = Record<never, never>;
 export function FlowbitePlugin(options?: FlowbitePluginOptions): Plugin {
   return {
     name: "flowbite",
-    entrypoints: {"main": "$flowbite/plugin.ts"},
+    entrypoints: { "main": "$flowbite/plugin.ts" },
     render(ctx: PluginRenderContext) {
       ctx.render();
       return {
         scripts: [
           {
             entrypoint: "main",
-            state: options ?? {}
-          }
-        ]
-      }
-    }
+            state: options ?? {},
+          },
+        ],
+      };
+    },
   };
 }

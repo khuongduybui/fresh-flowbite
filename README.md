@@ -19,8 +19,10 @@ Consume the Flowbite plugin in your app's `main.ts`.
 import { FlowbitePlugin } from "$flowbite/index.ts";
 
 await start(manifest, { plugins: [
+  ...
   twindPlugin(twindConfig),
   FlowbitePlugin(),
+  ...
 ] });
 ```
 
