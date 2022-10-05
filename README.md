@@ -11,7 +11,7 @@ Add Flowbite to your `import_map.json`.
 ```json
 {
   "imports": {
-    "$flowbite/": "https://raw.githubusercontent.com/khuongduybui/fresh-flowbite/0.0.1-1.5.3/"
+    "$flowbite/": "https://raw.githubusercontent.com/khuongduybui/fresh-flowbite/0.0.2-1.5.3/"
   }
 }
 ```
@@ -57,6 +57,10 @@ export default function Blank() {
   );
 }
 ```
+
+### Tailwind 3
+
+@TODO
 
 ## A note about versioning
 
