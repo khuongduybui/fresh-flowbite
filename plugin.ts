@@ -15,6 +15,8 @@ export function injectStylesheet(source: string) {
   document.head.appendChild(stylesheet);
 }
 
-export default function main(_state: FlowbitePluginOptions) {
+export default function main(state: FlowbitePluginOptions) {
   injectScript("https://unpkg.com/flowbite@1.5.3/dist/flowbite.js");
+  (state?.additionalScripts ?? []).forEach((script) => injectScript(script));
+  (state?.additionalStylesheets ?? []).forEach((stylesheet) => injectStylesheet(stylesheet));
 }

@@ -1,9 +1,21 @@
 import { Plugin } from "$fresh/server.ts";
 import { PluginRenderContext } from "$fresh/src/server/types.ts";
 
-export type FlowbitePluginOptions = Record<never, never>;
+export type FlowbitePluginOptions = {
+  additionalStylesheets?: string[];
+  additionalScripts?: string[];
+  plugins?: {
+    datepicker?: boolean;
+  };
+};
 
-export function FlowbitePlugin(options?: FlowbitePluginOptions): Plugin {
+export function FlowbitePlugin(options: FlowbitePluginOptions = {}): Plugin {
+  if (!options.additionalScripts) options.additionalScripts = [];
+  if (!options.additionalStylesheets) options.additionalStylesheets = [];
+  if (!options.plugins) options.plugins = { datepicker: true };
+
+  if (options.plugins.datepicker) options.additionalScripts.push("https://unpkg.com/flowbite@1.5.3/dist/datepicker.js");
+
   return {
     name: "flowbite",
     entrypoints: { "main": import.meta.resolve("./plugin.ts") },
@@ -13,7 +25,7 @@ export function FlowbitePlugin(options?: FlowbitePluginOptions): Plugin {
         scripts: [
           {
             entrypoint: "main",
-            state: options ?? {},
+            state: options,
           },
         ],
       };
