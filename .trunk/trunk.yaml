@@ -58,7 +58,7 @@ lint:
     - deno-md
     - deno-json
     - git-diff-check
-    - gitleaks@8.13.0
+    - gitleaks@8.15.0
     - markdownlint@0.32.2
 cli:
   version: 0.18.1-beta
