@@ -60,7 +60,7 @@ export default function Blank() {
 
 ### Tailwind 3
 
-@TODO
+[@TODO](https://github.com/khuongduybui/fresh-flowbite/issues/2)
 
 ## A note about versioning
 
