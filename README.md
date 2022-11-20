@@ -60,7 +60,20 @@ export default function Blank() {
 
 ### Tailwind 3
 
-[@TODO](https://github.com/khuongduybui/fresh-flowbite/issues/2)
+- Replace fresh's `twind` plugin with [freshwind](https://deno.land/x/freshwind@3.0.0/plugin.ts).
+- Update `twind` to [v1](https://esm.sh/twind@1.0.1).
+- Add at least the default preset [@twind/preset-tailwind](https://esm.sh/@twind/preset-tailwind@1.0.1/).
+- Update a `/twind.config.ts` to include presets, for example:
+
+```ts
+import { FreshwindUserConfig } from "freshwind/shared.ts";
+import presetTailwind from "@twind/preset-tailwind";
+
+export default {
+  selfURL: import.meta.url,
+  presets: [presetTailwind()],
+} as FreshwindUserConfig;
+```
 
 ## A note about versioning
 
