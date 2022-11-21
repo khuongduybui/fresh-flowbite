@@ -60,19 +60,34 @@ export default function Blank() {
 
 ### Tailwind 3
 
-- Replace fresh's `twind` plugin with [freshwind](https://deno.land/x/freshwind@3.0.0/plugin.ts).
-- Update `twind` to [v1](https://esm.sh/twind@1.0.1).
+- Update `twind` to [@twind/core](https://esm.sh/@twind/core@1.0.1).
 - Add at least the default preset [@twind/preset-tailwind](https://esm.sh/@twind/preset-tailwind@1.0.1/).
 - Update a `/twind.config.ts` to include presets, for example:
 
 ```ts
-import { FreshwindUserConfig } from "freshwind/shared.ts";
+import { defineConfig } from "@twind/core";
 import presetTailwind from "@twind/preset-tailwind";
 
-export default {
-  selfURL: import.meta.url,
+export default defineConfig({
   presets: [presetTailwind()],
-} as FreshwindUserConfig;
+});
+
+export const configURL = import.meta.url;
+```
+- Replace fresh's `twind` plugin with [freshwind](https://deno.land/x/freshwind@4.0.0/plugin.ts) in `/main.ts`, for example:
+
+```ts
+// ...
+import twindPlugin from "freshwind/plugin.ts";
+import twindConfig, { configURL as twindConfigURL } from "./twind.config.ts";
+// ...
+await start(manifest, {
+  plugins: [
+    // ...
+    twindPlugin(twindConfig, twindConfigURL),
+    // ...
+  ],
+});
 ```
 
 ## A note about versioning
