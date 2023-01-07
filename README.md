@@ -11,7 +11,7 @@ Add Flowbite to your `import_map.json`.
 ```json
 {
   "imports": {
-    "$flowbite/": "https://deno.land/x/fresh_flowbite@0.1.0-1.5.4/"
+    "$flowbite/": "https://deno.land/x/fresh_flowbite@0.1.0-1.6.0/"
   }
 }
 ```
@@ -60,8 +60,8 @@ export default function Blank() {
 
 ### Tailwind 3
 
-- Update `twind` to [@twind/core](https://esm.sh/@twind/core@1.0.1).
-- Add at least the default preset [@twind/preset-tailwind](https://esm.sh/@twind/preset-tailwind@1.0.1/).
+- Update `twind` to [@twind/core](https://esm.sh/@twind/core@1.1.2).
+- Add at least the default preset [@twind/preset-tailwind](https://esm.sh/@twind/preset-tailwind@1.1.2/).
 - Update a `/twind.config.ts` to include presets, for example:
 
 ```ts
@@ -92,8 +92,8 @@ await start(manifest, {
 
 ## A note about versioning
 
-For now, the versions are `a.b.c-x.y.z` where `a.b.c` is the plugin version and `x.y.z` is the supported Flowbite version. For example, `0.0.1-1.5.3` is the
-initial release of plugin, which supports Flowbite 1.5.3.
+For now, the versions are `a.b.c-x.y.z` where `a.b.c` is the plugin version and `x.y.z` is the supported Flowbite version. For example, `0.0.1-1.6.0` is the
+initial release of plugin, which supports Flowbite 1.6.0.
 
 All tags starting with `0.0.` are **mutable**. Expect breaking changes! Starting from `0.1.`, tags will be **immutable**. However, still expect breaking
 changes. Starting from `1.`, semver will kick in and there will be no breaking changes until `2.`.

@@ -14,7 +14,7 @@ export function FlowbitePlugin(options: FlowbitePluginOptions = {}): Plugin {
   if (!options.additionalStylesheets) options.additionalStylesheets = [];
   if (!options.plugins) options.plugins = { datepicker: true };
 
-  if (options.plugins.datepicker) options.additionalScripts.push("https://unpkg.com/flowbite@1.5.4/dist/datepicker.js");
+  if (options.plugins.datepicker) options.additionalScripts.push("https://unpkg.com/flowbite@1.6.0/dist/datepicker.js");
 
   return {
     name: "flowbite",
