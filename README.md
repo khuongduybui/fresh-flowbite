@@ -11,7 +11,7 @@ Add Flowbite to your `import_map.json`.
 ```json
 {
   "imports": {
-    "$flowbite/": "https://deno.land/x/fresh_flowbite@0.1.0-1.6.0/"
+    "$flowbite/": "https://deno.land/x/fresh_flowbite@1.0.0-1.6.0/"
   }
 }
 ```
