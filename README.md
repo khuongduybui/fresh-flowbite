@@ -11,7 +11,7 @@ Add Flowbite to your `import_map.json`.
 ```json
 {
   "imports": {
-    "$flowbite/": "https://deno.land/x/fresh_flowbite@1.0.0-1.6.0/"
+    "$flowbite/": "https://deno.land/x/fresh_flowbite@1.0.0-1.6.2/"
   }
 }
 ```
@@ -74,6 +74,7 @@ export default defineConfig({
 
 export const configURL = import.meta.url;
 ```
+
 - Replace fresh's `twind` plugin with [freshwind](https://deno.land/x/freshwind@4.0.0/plugin.ts) in `/main.ts`, for example:
 
 ```ts
@@ -93,7 +94,7 @@ await start(manifest, {
 ## A note about versioning
 
 For now, the versions are `a.b.c-x.y.z` where `a.b.c` is the plugin version and `x.y.z` is the supported Flowbite version. For example, `0.0.1-1.6.0` is the
-initial release of plugin, which supports Flowbite 1.6.0.
+initial release of plugin (0.0.1), which supports Flowbite 1.6.0.
 
 All tags starting with `0.0.` are **mutable**. Expect breaking changes! Starting from `0.1.`, tags will be **immutable**. However, still expect breaking
 changes. Starting from `1.`, semver will kick in and there will be no breaking changes until `2.`.
