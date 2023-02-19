@@ -52,16 +52,17 @@ lint:
           success_codes:
             - 0
   enabled:
-    - prettier@2.8.1
-    - cspell@6.18.0
+    - hadolint@2.12.0
+    - prettier@2.8.4
+    - cspell@6.26.3
     - deno-ts
     - deno-md
     - deno-json
     - git-diff-check
-    - gitleaks@8.15.2
-    - markdownlint@0.32.2
+    - gitleaks@8.15.3
+    - markdownlint@0.33.0
 cli:
-  version: 1.2.1
+  version: 1.5.0
 plugins:
   sources:
     - id: trunk
