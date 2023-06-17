@@ -11,7 +11,7 @@ Add Flowbite to your `import_map.json`.
 ```json
 {
   "imports": {
-    "$flowbite/": "https://deno.land/x/fresh_flowbite@1.0.0-1.6.3/"
+    "$flowbite/": "https://deno.land/x/fresh_flowbite@1.0.0-1.6.6/"
   }
 }
 ```
@@ -93,8 +93,5 @@ await start(manifest, {
 
 ## A note about versioning
 
-For now, the versions are `a.b.c-x.y.z` where `a.b.c` is the plugin version and `x.y.z` is the supported Flowbite version. For example, `0.0.1-1.6.0` is the
-initial release of plugin (0.0.1), which supports Flowbite 1.6.0.
-
-All tags starting with `0.0.` are **mutable**. Expect breaking changes! Starting from `0.1.`, tags will be **immutable**. However, still expect breaking
-changes. Starting from `1.`, semver will kick in and there will be no breaking changes until `2.`.
+For now, the versions are `a.b.c-x.y.z` where `a.b.c` is the plugin version and `x.y.z` is the supported Flowbite version. For example, `1.0.0-1.6.6` is the
+initial release of plugin (1.0.0), which supports Flowbite 1.6.6.
