@@ -89,10 +89,7 @@ export default function Button({ class: extraClass = "", disabled, variant = "de
       "dark:(bg-purple-600 hover:bg-purple-700 focus:ring-purple-900)",
     ],
   };
-  const classNames = commonClassNames.concat(
-    extraClassNamesByVariant[ButtonVariants[variant]],
-    [extraClass],
-  );
+  const classNames = [...commonClassNames, ...extraClassNamesByVariant[ButtonVariants[variant]], extraClass];
 
   return <button {...props} disabled={!IS_BROWSER || disabled} class={classNames.join(" ")} />;
 }

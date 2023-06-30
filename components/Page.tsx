@@ -11,7 +11,7 @@ export default function Page({ class: extraClass = "", title, ...props }: PagePr
     "text-gray-900",
     "dark:(bg-gray-900 text-white)",
   ];
-  const classNames = commonClassNames.concat(extraClass);
+  const classNames = [...commonClassNames, extraClass];
 
   const head = title
     ? (
