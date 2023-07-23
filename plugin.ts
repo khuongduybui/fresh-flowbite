@@ -16,7 +16,7 @@ export function injectStylesheet(source: string) {
 }
 
 export default function main(state: FlowbitePluginOptions) {
-  injectScript("https://unpkg.com/flowbite@1.6.6/dist/flowbite.js");
+  injectScript("https://unpkg.com/flowbite@1.7.0/dist/flowbite.js");
   (state?.additionalScripts ?? []).forEach((script) => injectScript(script));
   (state?.additionalStylesheets ?? []).forEach((stylesheet) => injectStylesheet(stylesheet));
 }
